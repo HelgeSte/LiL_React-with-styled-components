@@ -1,19 +1,10 @@
 import './App.css';
 import ProductDetails from './examples/ProductDetails';
 import Parent from './examples/Parent';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const App = () => {
-  const [data, setData]= useState([]);
-
-  useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-    .then(response =>
-      setData(response.data))
-      .catch(error =>
-        console.error('Error fetching data', error));
-  }, []);
-
-
   return (
     <div>
       <ProductDetails />
